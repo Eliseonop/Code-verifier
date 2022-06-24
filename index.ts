@@ -16,6 +16,14 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello World amigos!')
 })
 
+app.get('/goobye', (req: Request, res: Response) => {
+  res.json({
+    data: {
+      message: 'Goodbye, world!'
+    }
+  })
+})
+
 app.get('/hello', (req: Request, res: Response) => {
   res.send('soy la ruta hello!')
 })
