@@ -4,7 +4,8 @@
   "description": "aplicacion backend con nodejs y mongodb",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "swagger": "tsoa spec",
+    "dev": "concurrently \"npx tsc --watch\" \"npm run swagger \" \"nodemon -q dist/index.js\"",
     "test": "jest",
     "serve:coverage": "npm run test && cd coverage/lcov-report && npx serve ",
     "build": "npx webpack --mode development",
