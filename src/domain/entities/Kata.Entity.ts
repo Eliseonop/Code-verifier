@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 export const KataEntity = () => {
-  const userSchema = new mongoose.Schema({
+  const KataSchema = new mongoose.Schema({
     name: String,
     description: String,
     Level: Number,
@@ -10,5 +10,5 @@ export const KataEntity = () => {
     valoration: Number,
     chances: Number
   })
-  return mongoose.model('User', userSchema)
+  return mongoose.model('Kata', KataSchema)
 }
