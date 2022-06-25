@@ -6,6 +6,7 @@
 import express, { Request, Response } from 'express'
 import helloRouter from './HelloRouter'
 import { LogInfo } from '../utils/logger'
+import { goodByeRouter } from './GoodByeRouter'
 
 // Server instance
 const server = express()
@@ -25,6 +26,7 @@ rootRouter.get('/', (req: Request, res: Response) => {
 // Redirection to Router & controllers
 server.use('/', rootRouter)
 server.use('/hello', helloRouter)
+server.use('/goodbye', goodByeRouter)
 
 // Add more routes to the app
 export default server

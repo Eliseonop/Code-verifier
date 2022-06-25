@@ -11,3 +11,11 @@ export type ErrorResponse = {
   error: string
   message: string
 }
+
+/**
+ * Goodbye JSON response for Controller
+ */
+export type GoodbyeResponse = {
+  message: string
+  date: string
+}
