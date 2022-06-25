@@ -1,3 +1,4 @@
+import { BasicResponse } from './../controller/types/index'
 import { LogInfo } from '../utils/logger'
 import express, { Request, Response } from 'express'
 import { HelloController } from '../controller/HelloController'
@@ -16,7 +17,7 @@ helloRouter
     // Controller instance to execute method
     const controller: HelloController = new HelloController()
     // Obtain response from controller
-    const response = await controller.getMessage(name)
+    const response:BasicResponse = await controller.getMessage(name)
     // Send to the client the response
     return res.send(response)
   })

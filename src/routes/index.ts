@@ -27,4 +27,4 @@ server.use('/', rootRouter)
 server.use('/hello', helloRouter)
 
 // Add more routes to the app
-export default server
+export { server }
