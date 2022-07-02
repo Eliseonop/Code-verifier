@@ -9,7 +9,7 @@ export class HelloController implements IHelloController {
   /**
    * Endpoint to retrive a message "Hello {name}!" in JSON format
    * @param name  Naame of user to be greeted
-   * @returns  {BasicResponse} Promise<BasicResponse>
+   * @returns  {BasicResponse} Promise of BasicResponse
    */
   @Get('/')
   async getMessage (@Query() name?: string): Promise<BasicResponse> {

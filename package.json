@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "swagger": "tsoa spec",
-    "dev": "concurrently \"npx tsc --watch\" \"npm run swagger \" \"nodemon -q dist/index.js\"",
+    "dev": "concurrently \"npx tsc --watch\" \"npm run swagger\"  \"nodemon -q dist/index.js\"",
     "test": "jest",
     "serve:coverage": "npm run test && cd coverage/lcov-report && npx serve ",
     "build": "npx webpack --mode development",
@@ -16,13 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/Eliseonop/Code-verifier.git"
   },
-  "keywords": [
-    "node",
-    "express",
-    "typescript",
-    "swagger",
-    "mongodb"
-  ],
+  "keywords": ["node", "express", "typescript", "swagger", "mongodb"],
   "author": "Eliseo Falcon",
   "license": "ISC",
   "bugs": {

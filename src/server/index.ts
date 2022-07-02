@@ -1,6 +1,8 @@
 import express, { Express, Request, Response } from 'express'
+import mongoose from 'mongoose'
+// Swagger
+import swaggerUi from 'swagger-ui-express'
 // Environment variables
-
 // Security
 import cors from 'cors'
 import helmet from 'helmet'
@@ -13,12 +15,25 @@ import { server } from '../routes'
 // *Create express app
 const app: Express = express()
 
+// * Swagger config and route
+app.use(
+  '/docs',
+  swaggerUi.serve,
+  swaggerUi.setup(undefined, {
+    swaggerOptions: {
+      url: '/swagger.json',
+      explorer: true
+    }
+  })
+)
+
 // *Define SERVER to use "/api" and use root router
 app.use('/api', server)
 // static server
 app.use(express.static('public'))
 
-// TODO: MongoDB connection
+// TODO MongoDB connection
+mongoose.connect('mongodb://localhost:27017/codeverfication')
 
 // *Security config
 app.use(cors())
