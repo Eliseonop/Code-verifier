@@ -16,7 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/Eliseonop/Code-verifier.git"
   },
-  "keywords": ["node", "express", "typescript", "swagger", "mongodb"],
+  "keywords": [
+    "node",
+    "express",
+    "typescript",
+    "swagger",
+    "mongodb"
+  ],
   "author": "Eliseo Falcon",
   "license": "ISC",
   "bugs": {
@@ -24,10 +30,12 @@
   },
   "homepage": "https://github.com/Eliseonop/Code-verifier#readme",
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "helmet": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.0",
     "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.4.0",

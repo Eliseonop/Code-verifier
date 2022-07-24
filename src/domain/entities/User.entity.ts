@@ -6,5 +6,5 @@ export const UserEntity = () => {
     email: String,
     age: Number
   })
-  return mongoose.model('User', userSchema)
+  return mongoose.models.Users || mongoose.model('Users', userSchema)
 }

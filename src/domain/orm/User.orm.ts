@@ -6,22 +6,60 @@ import { LogError } from '../../utils/logger'
 /**
  * Method to obtain a user from Colletction "Users" in MongoDB
  */
-export const GetAllUsers = async (): Promise<any[] | undefined> => {
+export const getAllUsers = async (): Promise<any[] | undefined> => {
   try {
     const userModel = UserEntity()
 
     // Search all users
-    return await userModel.find({ isDelete: false })
+    return await userModel.find()
   } catch (error) {
     LogError('error')
-    throw error
+    console.log({ error })
   }
 }
 
 // TODO
 // - Get user id
-// - Get user by email
+export const getUserById = async (id: string): Promise<any | undefined> => {
+  try {
+    const userModel = UserEntity()
+
+    // Search user by id
+    return await userModel.findById(id)
+  } catch (error) {
+    LogError('error')
+  }
+}
+
 // - Delete user
-// - Update user
+export const deleteUserByID = async (id: string): Promise<any | undefined> => {
+  try {
+    const userModel = UserEntity()
+
+    return await userModel.deleteOne({ _id: id })
+  } catch (error) {
+    LogError('[orm error]: Deleting user by id')
+  }
+}
 // - Create user
-// update user by id
+export const createNewUser = async (user: any): Promise<any | undefined> => {
+  try {
+    const userModel = UserEntity()
+
+    return await userModel.create(user)
+  } catch (error) {
+    LogError('[orm error]: Creating user')
+  }
+}
+export const updateUserByID = async (
+  id: string,
+  user: any
+): Promise<any | undefined> => {
+  try {
+    const userModel = UserEntity()
+    return await userModel.findByIdAndUpdate(id, user)
+  } catch (error) {
+    LogError('[orm error]: Updating user')
+  }
+  // update user by id
+}
